@@ -1,4 +1,6 @@
 class MatrixCalc
+  attr_reader :foot_print
+
   def initialize(array)
     @array = array
   end
@@ -8,6 +10,7 @@ class MatrixCalc
       result = 0
       @row = 0
       @col = 0
+      @foot_print = []
 
       init_steps
 
@@ -47,6 +50,7 @@ class MatrixCalc
   # 走过了标记为1
   def mark_step
     @steps[@row][@col] = 1
+    @foot_print << @array[@row][@col]
   end
 
   def next_step

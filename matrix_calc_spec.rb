@@ -88,5 +88,13 @@ describe MatrixCalc do
       expect(MatrixCalc.new(array5).calc).to eq array5.flatten.inject(:+)
       expect(MatrixCalc.new(array6).calc).to eq array6.flatten.inject(:+)
     end
+
+    it 'returns right foot print' do
+      matrix = MatrixCalc.new(array1)
+      matrix.calc
+      expect(matrix.foot_print[0]).to eq 12
+      expect(matrix.foot_print[8]).to eq 5
+      expect(matrix.foot_print[-1]).to eq 25
+    end
   end
 end
